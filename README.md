@@ -11,13 +11,21 @@
 # make sure you have created .env file tailored for your local environment
 cp .env.example .env
 vi .env
+
+docker-compose build app
+docker-compose up -d
+docker-compose ps
+docker-compose exec app ls -l
+docker-compose exec app composer install
+docker-compose exec app php artisan key:generate
+docker-compose logs nginx
 ```
 
 
 
 # Demo: Analyze Customer Feedback
 ```
-http -f http://demo-sentiment-analyzer.test/api/analyze text="I really like the new design of your website"
+http -f http://localhost:8000/api/analyze text="I really like the new design of your website"
 
 {
     "lang": {
@@ -34,7 +42,7 @@ http -f http://demo-sentiment-analyzer.test/api/analyze text="I really like the 
 ```
 
 ```
-http -f http://demo-sentiment-analyzer.test/api/analyze text="The new design is awful"
+http -f http://localhost:8000/api/analyze text="The new design is awful"
 
 {
     "lang": {
@@ -51,7 +59,7 @@ http -f http://demo-sentiment-analyzer.test/api/analyze text="The new design is 
 ```
 
 ```
-http -f http://demo-sentiment-analyzer.test/api/analyze text="I am not sure if I like the new design"
+http -f http://localhost:8000/api/analyze text="I am not sure if I like the new design"
 
 {
     "lang": {
@@ -65,4 +73,12 @@ http -f http://demo-sentiment-analyzer.test/api/analyze text="I am not sure if I
         "Positive": 0.10474501550197601
     }
 }
+```
+
+
+
+
+# Cleanup
+```
+docker-compose down
 ```
