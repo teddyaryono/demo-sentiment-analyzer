@@ -15,7 +15,7 @@ vi .env
 
 
 
-# Demo: Analyze customer feedback on our new website design
+# Demo: Analyze Customer Feedback
 ```
 http -f http://demo-sentiment-analyzer.test/api/analyze text="I really like the new design of your website"
 
