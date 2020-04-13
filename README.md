@@ -1,7 +1,7 @@
 # Sentiment Analyzer Demo
 
 - Created with Laravel 7.x and Amazon Comprehend API
-- Deployed to ECS
+- Deployed to ECS and Fargate (WIP)
 
 
 
