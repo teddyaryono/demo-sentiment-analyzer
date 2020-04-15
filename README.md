@@ -5,7 +5,7 @@
 
 
 
-# How to Run in Local (using [Valet](https://laravel.com/docs/7.x/valet))
+# How to Run in Local
 
 ```
 # make sure you have created .env file tailored for your local environment
